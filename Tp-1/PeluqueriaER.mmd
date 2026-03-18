@@ -1,0 +1,40 @@
+erDiagram
+
+    Persona {
+        int id_persona pk
+        String nombre
+        String apellido
+        int edad
+        int telefono
+    }
+
+    Peluquero {
+        int id_peluquero pk
+    }
+
+Para cada cita, el sistema debe almacenar la información del cliente, la fecha y hora de la
+cita, la sucursal en la que se realizará la cita, el peluquero asignado, el servicio solicitado y
+el precio del servicio.
+
+    Cliente {
+        int id_cliente pk
+    }
+
+    Corte{
+        int id_corte
+        string nombre_corte
+        string descripcion_corte
+        int precio_corte
+    }
+
+    Peluqueria{
+
+    }
+    
+    Cita{
+        int id_cita pk
+        date fecha_cita
+        date fecha_recordatorio
+        time hora
+        int id_estilo_corte fk
+    }

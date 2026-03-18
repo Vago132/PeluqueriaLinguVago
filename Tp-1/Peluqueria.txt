@@ -1,0 +1,43 @@
+
+
+Caso 11: Peluqueria
+
+Una peluquería con múltiples sucursales desea desarrollar un sistema centralizado para
+gestionar sus citas y clientes. El sistema debe permitir a los peluqueros de cada sucursal
+agendar y cancelar citas, ver el historial de cortes y estilos de cada cliente, así como la
+información de contacto y preferencias de estilo de cada uno.
+El sistema debe permitir a los clientes crear una cuenta única para todas las sucursales,
+programar citas en línea y recibir recordatorios de citas para cualquier sucursal que elijan.
+También deben poder ver su historial de cortes y estilos en todas las sucursales, así como
+la información de contacto de la peluquería para cada sucursal.
+Para cada cita, el sistema debe almacenar la información del cliente, la fecha y hora de la
+cita, la sucursal en la que se realizará la cita, el peluquero asignado, el servicio solicitado y
+el precio del servicio.
+El sistema debe permitir a los peluqueros de cada sucursal acceder a su agenda diaria y ver
+las citas programadas para ese día en su sucursal. También deben poder ver el historial de
+cortes y estilos de cada cliente en todas las sucursales.
+El sistema debe permitir a los gerentes de la peluquería central acceder a los informes de
+ventas de todas las sucursales, incluyendo ventas diarias, semanales y mensuales, así
+como sobre los servicios más solicitados y los peluqueros más productivos en cada
+sucursal.
+Además, el sistema debe tener medidas de seguridad sólidas para proteger la privacidad de
+los datos del cliente y del negocio, incluyendo la encriptación de datos y autenticación de
+usuarios. También debe tener la capacidad de realizar copias de seguridad y recuperación
+de datos en caso de fallas del sistema.
+
+-------Consultas------
+
+● Administración desea obtener el monto recaudado por cada sucursal en el último
+mes, junto con la cantidad de citas comparando con la cantidad de citas del mes
+pasado.
+● El sistema debe permitir a los peluqueros de cada sucursal acceder a su agenda
+diaria y ver las citas programadas para ese día en su sucursal. También deben poder
+ver el historial de cortes y estilos de cada cliente en todas las sucursales.
+● Se desea obtener los peluqueros más solicitados por sucursal junto con su cantidad
+citas en el último mes además del peluquero menos solicitado con su cantidad de
+citas
+● Se desea obtener por sucursal la cantidad de citas reservadas en los últimos 6
+meses junto con la cantidad que fueron completadas y las canceladas. Además de
+calcular el porcentaje que representan las citas canceladas
+● Los peluqueros deben poder verificar la cantidad de citas programadas junto con el
+historial de cortes realizados sobre los clientes que realizaron las citas
