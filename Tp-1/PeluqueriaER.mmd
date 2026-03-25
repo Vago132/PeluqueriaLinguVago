@@ -1,40 +1,59 @@
 erDiagram
 
+Persona ||--o| Cliente : es
+Persona ||--o| Peluquero : es
+Cliente ||--o{ Cita : solicita
+Peluquero ||--o{ Cita : atiende
+Local ||--o{ Cita : se_realiza_en
+Local ||--o{ Peluquero : trabaja_en
+Cita ||--o{ Cita_Servicio : incluye
+Servicio ||--o{ Cita_Servicio : participa_en
+
     Persona {
         int id_persona pk
         String nombre
         String apellido
-        int edad
-        int telefono
+        date fecha_nacimiento
+        String telefono
+        String mail
     }
 
     Peluquero {
         int id_peluquero pk
+        int id_local fk
     }
-
-Para cada cita, el sistema debe almacenar la información del cliente, la fecha y hora de la
-cita, la sucursal en la que se realizará la cita, el peluquero asignado, el servicio solicitado y
-el precio del servicio.
 
     Cliente {
         int id_cliente pk
+        hash contraseña_cliente
     }
 
-    Corte{
-        int id_corte
-        string nombre_corte
-        string descripcion_corte
-        int precio_corte
+    Servicio{
+        int id_servicio pk
+        String nombre_servicio
+        String descripcion_servicio
+        float precio_servicio
     }
 
-    Peluqueria{
-
+    Local{
+        int id_local pk
+        String provincia_local
+        String direccion_local
+        String telefono_local
     }
     
-    Cita{
+    Cita {
         int id_cita pk
-        date fecha_cita
-        date fecha_recordatorio
-        time hora
-        int id_estilo_corte fk
+        datetime fecha_hora
+        String estado
+        int id_cliente fk
+        int id_peluquero fk
+        int id_local fk
+    }
+
+    Cita_Servicio{
+        int id_cita_servicio pk
+        int id_cita fk
+        int id_servicio fk
+        float precio_aplicado
     }

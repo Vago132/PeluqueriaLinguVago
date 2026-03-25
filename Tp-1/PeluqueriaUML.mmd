@@ -1,0 +1,84 @@
+classDiagram
+    Animal <|-- Duck
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal : +isMammal()
+    Animal : +mate()
+    class Duck{
+      +String beakColor
+      +swim()
+      +quack()
+    }
+    class Fish{
+      -int sizeInFeet
+      -canEat()
+    }
+    class Zebra{
+      +bool is_wild
+      +run()
+    }
+
+
+
+Persona <|-- Cliente
+Persona <|-- Peluquero
+Cliente ||--o{ Cita : solicita
+Peluquero ||--o{ Cita : atiende
+Local ||--o{ Cita : se_realiza_en
+Local ||--o{ Peluquero : trabaja_en
+Cita ||--o{ Cita_Servicio : incluye
+Servicio ||--o{ Cita_Servicio : participa_en
+
+    class Persona {
+        -int id_persona pk
+        +String nombre
+        +String apellido
+        +date fecha_nacimiento
+        +String telefono
+        +String mail
+    }
+
+    Peluquero {
+        -int id_peluquero pk
+        -int id_local fk
+        -realizar_servicio()
+    }
+
+    Cliente {
+        -int id_cliente pk
+        -hash contraseña_cliente
+        -pagar_servicio()
+    }
+
+    Servicio{
+        -int id_servicio pk
+        +String nombre_servicio
+        +String descripcion_servicio
+        +float precio_servicio
+    }
+
+    Local{
+        -int id_local pk
+        +String provincia_local
+        +String direccion_local
+        +String telefono_local
+    }
+    
+    Cita {
+        -int id_cita pk
+        -datetime fecha_hora
+        +String estado
+        -int id_cliente fk
+        -int id_peluquero fk
+        -int id_local fk
+        -Recordar_horario()
+    }
+
+    Cita_Servicio{
+        -int id_cita_servicio pk
+        -int id_cita fk
+        -int id_servicio fk
+        +float precio_aplicado
+    } 
