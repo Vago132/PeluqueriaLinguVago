@@ -1,14 +1,14 @@
 classDiagram
     Persona <|-- Cliente
     Persona <|-- Peluquero
-    Cliente --> Cita : solicita
-    Peluquero --> Cita : atiende
-    Local --> Cita : se_realiza_en
-    Local --> Peluquero : trabaja_en
-    Cita --> Cita_Servicio : incluye
-    Servicio --> Cita_Servicio : participa_en
+    Cliente "1" -->  "0..*" Cita : solicita
+    Peluquero "1" -->  "0..*" Cita : atiende
+    Local "1" -->  "0..*" Cita : se_realiza_en
+    Local "1" -->  "0..*" Peluquero : trabaja_en
+    Cita "1" -->  "1..*" Cita_Servicio : incluye
+    Servicio "1" -->  "0..*" Cita_Servicio : participa_en
 
-    class Persona {
+        class Persona {
         +int id_persona pk
         +String nombre
         +String apellido
@@ -18,15 +18,14 @@ classDiagram
     }
 
     class Peluquero {
-        +int id_peluquero pk
-        +int id_local fk
-        +realizar_servicio()
+        +verAgenda()
     }
 
     class Cliente {
-        +int id_cliente pk
         +hash contraseña_cliente
-        +pagar_servicio()
+        +String preferencias_estilo
+        +solicitarCita()
+        +cancelarCita()
     }
 
     class Servicio{
@@ -47,15 +46,9 @@ classDiagram
         +int id_cita pk
         +datetime fecha_hora
         +String estado
-        +int id_cliente fk
-        +int id_peluquero fk
-        +int id_local fk
-        +Recordar_horario()
     }
 
     class Cita_Servicio{
         +int id_cita_servicio pk
-        +int id_cita fk
-        +int id_servicio fk
         +float precio_aplicado
     } 
